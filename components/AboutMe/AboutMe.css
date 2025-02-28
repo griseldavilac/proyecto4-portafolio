@@ -1,0 +1,56 @@
+.aboutme {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  gap: 2rem;
+  max-width: 100%;
+}
+
+/* Imagen del perfil */
+.aboutme > img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.aboutme > .rotate {
+  animation: rotate 5s infinite linear;
+}
+
+/* Asegura que el texto se adapte */
+.aboutme > p {
+  max-width: 700px;
+  text-align: center;
+}
+
+/* Ajusta las habilidades */
+.aboutme > ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.aboutme li {
+  padding: 5px 10px;
+  background-color: var(--body);
+  border-radius: 1rem;
+  color: var(--background);
+}
+
+/* Ajuste en móviles */
+@media (max-width: 768px) {
+  .aboutme > img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .aboutme > p {
+    max-width: 90%;
+  }
+}

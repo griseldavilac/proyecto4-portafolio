@@ -1,0 +1,21 @@
+/* Estilos generales del Main */
+main {
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-width: 100%;
+  padding: 1rem;
+}
+
+/* Asegura que los elementos no se desborden en móviles */
+section {
+  max-width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Ajuste del contenedor */
+.change-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

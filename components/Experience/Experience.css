@@ -1,0 +1,34 @@
+.experience {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+  margin: 50px 0px;
+  padding: 1rem;
+}
+
+/* Ajuste de la lista */
+.experience ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 600px;
+  padding: 2rem;
+}
+
+.experience li {
+  background-color: var(--body);
+  padding: 10px;
+  border-radius: 8px;
+  color: var(--background);
+  width: 100%;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .experience ul {
+    max-width: 90%;
+  }
+}
