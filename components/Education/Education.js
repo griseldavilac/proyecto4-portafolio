@@ -1,8 +1,6 @@
-// Importamos los datos desde data.js
 import data from '../../data/data'
-import './Education.css' // Importamos los estilos de Education
+import './Education.css'
 
-// Función que genera la estructura de la sección de Educación
 const template = () => {
   return `
     <section class="education" id="education">
@@ -35,23 +33,6 @@ const template = () => {
   `
 }
 
-// Función para manejar el botón de cambio entre Educación y Experiencia
-export const addToggleListener = () => {
-  const toggleBtn = document.getElementById('toggle-btn')
-  if (!toggleBtn) return
-
-  toggleBtn.addEventListener('click', () => {
-    if (window.location.hash === '#education') {
-      window.location.hash = '#experience'
-      toggleBtn.textContent = 'Mostrar Educación'
-    } else {
-      window.location.hash = '#education'
-      toggleBtn.textContent = 'Mostrar Experiencia'
-    }
-  })
-}
-
-// Exportamos correctamente el módulo
 const Education = () => {
   return template()
 }

@@ -1,8 +1,6 @@
-// Importamos los datos desde data.js
 import data from '../../data/data'
-import './Experience.css' // Importamos los estilos de Experience
+import './Experience.css'
 
-// Función que genera el contenido de la sección Experiencia
 const template = () => {
   return `
   <section class="experience" id="experience">
@@ -24,7 +22,6 @@ const template = () => {
   </section>`
 }
 
-// Exportamos correctamente el módulo
 const Experience = () => {
   return template()
 }

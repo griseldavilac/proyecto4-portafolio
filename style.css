@@ -1,3 +1,4 @@
+/* Definimos colores y fuente base */
 :root {
   --background: #2c2c2c;
   --heading: #ffffff;
@@ -5,17 +6,20 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+/* Reset de márgenes y paddings */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Estilo general del cuerpo */
 body {
   background-color: var(--background);
   color: var(--body);
 }
 
+/* Estilos generales de textos */
 a,
 h1,
 h2,
@@ -24,7 +28,7 @@ h4,
 h5,
 h6 {
   color: var(--heading);
-  letter-spacing: 4px;
+  letter-spacing: 2px;
 }
 
 a {
@@ -40,15 +44,211 @@ ul {
   list-style-type: none;
 }
 
+/* Ajustamos el layout principal */
 main {
-  min-height: 100vh; /* Evita el desbordamiento en móviles */
+  min-height: 100vh;
   scroll-behavior: smooth;
+  padding-top: 80px; /* ✅ Ajuste para que los títulos no queden ocultos */
 }
 
+/* Secciones */
 section {
   min-height: auto;
+  padding: 60px 20px; /* ✅ Espaciado suficiente para evitar que los títulos se corten */
+  text-align: center;
 }
 
-.hidden {
+/* ✅ Imagen de perfil redonda y pequeña */
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.avatar:hover {
+  transform: scale(1.1);
+}
+
+/* ✅ Espaciado para la sección de "Sobre mí" */
+.aboutme {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* ✅ Contenedor de "Sobre mí" para que se vea ordenado */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.about-text p {
+  font-size: 14px;
+}
+
+/* ✅ Diseño para las habilidades */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.skills-list li {
+  background: var(--heading);
+  color: var(--background);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* ✅ Educación y experiencia centradas con espaciado adecuado */
+.education,
+.experience {
+  text-align: center;
+}
+
+.education h2,
+.experience h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* ✅ Tarjetas de educación y experiencia */
+.education-card,
+.experience li {
+  background: var(--body);
+  color: #000000 !important; /* ✅ Forzamos el color negro */
+  font-weight: normal !important; /* ✅ Evitamos negrita */
+  padding: 15px;
+  border-radius: 10px;
+  margin: 10px auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+/* ✅ Justificación y color negro para el texto dentro de proyectos */
+.projects ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.project-card {
+  background: var(--body);
+  padding: 20px;
+  border-radius: 10px;
+  width: 280px;
+  text-align: center;
+}
+
+.project-card h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #000000 !important; /* ✅ Forzamos negro */
+}
+
+.project-card p {
+  text-align: justify; /* ✅ Justificación del texto */
+  color: #000000 !important; /* ✅ Asegura que el texto sea negro */
+  font-weight: normal !important; /* ✅ Evita la negrita */
+}
+
+/* ✅ Enlaces de proyectos */
+.project-links {
+  margin-top: 10px;
+}
+
+.project-links a {
+  display: inline-block;
+  background: var(--background);
+  color: var(--heading);
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.project-links a:hover {
+  background: var(--heading);
+  color: var(--background);
+}
+
+/* ✅ Ocultamos "Vista previa del proyecto" */
+.project-card img {
   display: none;
+}
+
+/* ✅ Ajustamos el menú de navegación */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: var(--background);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+header h1 {
+  font-size: 22px;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* ✅ Asegura que los títulos de Educación/Experiencia se vean bien */
+#content {
+  padding-top: 80px; /* ✅ Ajuste de espacio para que no se oculte */
+}
+
+/* ✅ Menú hamburguesa para móviles */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: var(--heading);
+  cursor: pointer;
+}
+
+/* ✅ Responsive para móviles */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: var(--background);
+    width: 200px;
+    padding: 10px;
+  }
+
+  nav ul.open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
 }
